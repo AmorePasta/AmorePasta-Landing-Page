@@ -3708,8 +3708,8 @@ input, select, textarea {
 
 			#banner {
 				padding: 7em 3em 5em 3em ;
-				height: auto;
-				min-height: 0;
+				/* height: auto;  */
+				/* min-height: 0;  */
 			}
 
 				#banner h2 {
