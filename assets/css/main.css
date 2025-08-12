@@ -72,74 +72,6 @@ input, select, textarea {
 	appearance: none;
 }
 
-/* My Additions */
-
-#banner-carousel {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Full viewport height */
-  overflow: hidden;
-}
-
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  z-index: 1;
-}
-
-.carousel-slide.active {
-  opacity: 1;
-  z-index: 2;
-}
-
-.carousel-slide .inner {
-  position: relative;
-  z-index: 3;
-  /* Add your original banner content styling here */
-  color: #fff;
-  text-align: center;
-  /* Ensure this section is visible on top of the image */
-}
-
-/* Optional Navigation Dots */
-.carousel-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.dot.active {
-  background-color: #717171;
-}
-
-/* End My Additions */
-
 /* Basic */
 
 	@-ms-viewport {
@@ -3882,10 +3814,10 @@ input, select, textarea {
 
 	#main > header {
 		padding: 12em 0 10em 0 ;
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -4032,10 +3964,10 @@ input, select, textarea {
 /* Landing */
 
 	body.landing #page-wrapper {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -4053,10 +3985,10 @@ input, select, textarea {
 
 	body.is-mobile.landing #banner,
 	body.is-mobile.landing .wrapper.style4 {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/pasta2.jpg");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
