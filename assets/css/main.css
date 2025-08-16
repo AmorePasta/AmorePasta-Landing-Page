@@ -2670,7 +2670,7 @@ input, select, textarea {
 		display: -ms-flex;
 		display: flex;
 	}
-
+		/* My Additions */
 		.spotlight .image {
 			-moz-order: 1;
 			-webkit-order: 1;
@@ -2678,12 +2678,18 @@ input, select, textarea {
 			order: 1;
 			border-radius: 0;
 			width: 40%;
+			max-height: 300px; /* limits the height nicely */
+			overflow: hidden;
 		}
 
 			.spotlight .image img {
 				border-radius: 0;
 				width: 100%;
+				height: auto;     /* maintain aspect ratio */
+				object-fit: contain; /* ensures image scales nicely */
 			}
+
+			/* End My Additions */
 
 		.spotlight .content {
 			padding: 2em 4em 0.1em 4em ;
@@ -3823,6 +3829,7 @@ input, select, textarea {
 		background-repeat: no-repeat;
 		background-size: cover;
 		text-align: center;
+		transition: background-image 1s ease-in-out;
 	}
 
 		#main > header h2 {
@@ -3973,6 +3980,7 @@ input, select, textarea {
 		background-repeat: no-repeat;
 		background-size: cover;
 		padding-top: 0;
+		transition: background-image 1s ease-in-out;
 	}
 
 	body.landing #footer {
@@ -3992,8 +4000,245 @@ input, select, textarea {
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		transition: background-image 1s ease-in-out;
 	}
 
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+/* My Additions */
+
+.pasta-row {
+    display: flex;
+    gap: 10px;               /* space between dropdown and input */
+    margin-top: 0px;
+    justify-content: center;  /* center the row */
+    align-items: center;      /* vertical alignment */
+    width: 100%;
+	margin-bottom: 10px;
+}
+
+.pasta-row label {
+    flex: 1;                  /* make label take same width as input/select */
+    text-align: center;        /* center the label text */
+    font-size: 0.9em;
+    color: #555;
+}
+
+.pasta-row select,
+.pasta-row input {
+    flex: 1;                  /* take equal width */
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    text-align: center;       /* center the text inside */
+    box-sizing: border-box;
+    color: #444;
+}
+
+
+.pasta-row select:focus,
+.pasta-row input:focus {
+    border-color: #5b84ff;
+    box-shadow: 0 0 8px rgba(173, 173, 173, 0.4);
+    outline: none;
+}
+
+
+/* Base Modal Styles */
+#orderModal.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    font-family: "Courier New", monospace;
+}
+
+#orderModal .modal-content {
+    background: #f5f5f5;
+    margin: 10% auto 5% auto; /* top margin bigger, bottom margin stays */
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-sizing: border-box;
+}
+
+/* Header and Close Button */
+#orderModal .modal-content h3 {
+    margin-top: 0;
+    font-size: 1.2em; /* Reduced font size for compactness */
+    color: #444;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px; /* Reduced padding */
+    font-weight: 600;
+    text-align: center; /* Centered the header text */
+}
+
+#closeModal.close {
+    float: right;
+    font-size: 1.5em; /* Reduced close button size */
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s ease;
+}
+
+#closeModal.close:hover {
+    color: #777;
+}
+
+/* Form Elements */
+#orderForm {
+    /* Use flexbox to easily center the button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#orderForm label {
+    font-weight: 500;
+    margin: 2px 0 2px 0; /* small top and bottom margins */
+    display: block;
+    color: #555;
+    font-size: 0.9em;
+    width: 100%;
+}
+
+#orderForm input,
+#orderForm textarea {
+    width: 100%;
+    padding: 4px 6px; /* slight padding so text isn't jammed */
+    margin: 0 0 8px 0; /* small bottom gap for spacing */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+#orderForm input::placeholder,
+#orderForm textarea::placeholder {
+    color: #999;
+}
+
+#orderForm input:focus,
+#orderForm textarea:focus {
+    border-color: #5b84ff;
+    box-shadow: 0 0 8px rgba(173, 173, 173, 0.4);
+    outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    display: flex;
+    justify-content: center;  /* Horizontal center */
+    align-items: center;      /* Vertical center */
+    margin-top: 25px;      /* Center button itself */
+    background: green;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+    background: darkgreen;
+    transform: translateY(-2px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h3 {
+	text-align: center;
+}
+     
+.pasta-gallery {
+    /* Use Flexbox to align the pasta items in a row */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /* Adjusts the space between each pasta item */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+.pasta-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.pasta-item:hover {
+    transform: translateY(-5px); /* Simple hover effect to lift the item */
+}
+
+.pasta-item img {
+    max-width: 250px;
+    height: 250px; /* This line is now the final, applied height */
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: spin 10s infinite linear;
+}
+
+.pasta-item p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.icon.solid i,
+.icon.solid h3 {
+    display: inline-block;
+    vertical-align: middle; /* aligns them on the same baseline */
+    margin: 0;              /* remove any default spacing/margin */
+}
+
+.red-icon {
+    color: red;
+    font-size: 1.5em;
+    line-height: 1;          /* ensure icon height matches text line */
+	padding-right: 1em;
+}
+
+/* Keyframe animation for the spinning effect */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .pasta-gallery {
+        /* Change the flex direction to column to stack the items */
+        flex-direction: column;
+        /* Adjust the gap for vertical stacking */
+        gap: 20px;
+    }
+    .pasta-item img {
+        /* Make images a bit smaller on mobile for a cleaner look */
+        max-width: 150px;
+		height: 150px;
+    }
+}
+
+/* End My Additions */
