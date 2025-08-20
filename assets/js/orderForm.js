@@ -5,6 +5,10 @@ document.getElementById("orderBtn").addEventListener("click", function() {
     document.getElementById("orderModal").style.display = "block";
 });
 
+document.getElementById("orderBtnBtm").addEventListener("click", function() {
+    document.getElementById("orderModal").style.display = "block";
+});
+
 // Close modal
 document.getElementById("closeModal").addEventListener("click", function() {
     document.getElementById("orderModal").style.display = "none";

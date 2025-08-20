@@ -56,21 +56,24 @@
 									<input type="tel" name="phone" required>
 
 									<!-- Pasta selection and points side by side -->
-									<label>Pasta Type & Pounds (0.5 lb min):</label>
 									<div class="pasta-row">
-										<select name="pasta" required>
-											<option value="">Select Pasta</option>
-											<option value="spaghetti">Spaghetti</option>
-											<option value="fettuccine">Fettuccine</option>
-											<option value="penne">Penne</option>
-											<option value="lasagna">Lasagna</option>
+										<label for="pasta-type">Pasta Type:</label>
+										<select id="pasta-type" name="pasta_type">
+											<option value="">--Select--</option>
+											<option>Spaghetti</option>
+											<option>Penne</option>
+											<option>Fettuccine</option>
 										</select>
-
-									<input type="number" name="points" placeholder="Pounds" min="0.5" required>
 									</div>
+
+									<div class="pasta-row">
+										<label for="points">Pounds (0.5lb Min):</label>
+										<input id="points" type="number" placeholder="Pounds">
+									</div>
+
 									
 									<label>Anything Else We Need to Know:</label>
-									<textarea name="order" required></textarea>
+									<textarea class="anythingElse" name="order" required></textarea>
 
 									<button type="submit" class="submit-btn">Send Order</button>
 								</form>
@@ -101,7 +104,7 @@
 
 
 								<p style="text-align: center;">You can order between this type and that type blah blah</p>
-								<p style="text-align: center;"><a href="orders.html" class="button fit primary">Place Order Now</a></p>
+								<p style="text-align: center;"><button id="orderBtnBtm" class="button fit primary">Place Order Now</button></p>
 
 							</div>
 						</section>
